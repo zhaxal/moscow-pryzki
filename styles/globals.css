@@ -43,7 +43,7 @@
 @font-face {
   font-family: Exo;
   /* Гарнитура шрифта */
-  src: url(../public/fonts/Exo-Regular.otf);
+  src: url(../public/fonts/Exo-Regular.ttf);
   /* Путь к файлу со шрифтом */
 }
 
