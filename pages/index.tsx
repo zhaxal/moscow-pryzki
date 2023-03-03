@@ -4,10 +4,10 @@ import Cover from './components/cover-block'
 export default function Home() {
   return (
     <Stack sx={{ direction: 'column', width: "100%" }}>
-      {/* <Cover /> */}
-      <Alert variant="filled" severity="warning">
+      <Cover />
+      {/* <Alert variant="filled" severity="warning">
         Сайт находится в разработке
-      </Alert>
+      </Alert> */}
     </Stack>
   )
 }

@@ -18,7 +18,7 @@ const Cover = () => {
               <Box component={"img"} src={"images/logos/mossportLogo.svg"} sx={{ maxWidth: "70px" }} alt={"mossportLogo"} />
               <Box component={"img"} src={"images/logos/100yearLogo.svg"} sx={{ maxWidth: "246px", maxHeight: "68px" }} alt={"100yearLogo"} />
             </Stack>
-            <Typography sx={{ textAlign: "right", color: "white", whiteSpace: "pre-line" }}>
+            <Typography sx={{ textAlign: "right", color: "white", whiteSpace: "pre-line", fontFamily: "Exo" }}>
               {`Дворец спорта
               Олимпийского комплекса
               «Лужники» `}
