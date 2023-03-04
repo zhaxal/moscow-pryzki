@@ -41,15 +41,15 @@
 
 
 @font-face {
-  font-family: Exo;
+  font-family: Exo2;
   /* Гарнитура шрифта */
-  src: url(../public/fonts/Exo-Regular.ttf);
+  src: url(../public/fonts/Exo2-Regular.ttf);
   /* Путь к файлу со шрифтом */
 }
 
 @font-face {
-  font-family: Exo2;
+  font-family: Exo2-Light;
   /* Гарнитура шрифта */
-  src: url(../public/fonts/Exo2-Regular.otf);
+  src: url(../public/fonts/Exo2-Light.ttf);
   /* Путь к файлу со шрифтом */
 }
