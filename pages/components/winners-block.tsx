@@ -1,48 +1,61 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, FreeMode } from "swiper";
+import { Navigation } from "swiper";
 import "swiper/css";
+import "swiper/css/navigation";
+
+interface Props {
+  isMobile: boolean;
+}
 
 interface WinnerProps {
   img: string;
   name: string;
   desc: string;
+  isMobile: boolean;
 }
 
-const WinnerCard = ({ img, name, desc }: WinnerProps) => {
+const WinnerCard = ({ img, name, desc, isMobile }: WinnerProps) => {
   return (
     <Stack
       direction={"column"}
       sx={{
-        maxWidth: "400px",
+        width: isMobile ? "400px" : "300px",
+        height: isMobile ? "910px" : "800px",
         background:
           "linear-gradient(218.58deg, #343434 10.35%, #3E3E3E 94.68%)",
-        pb: "45px",
       }}
       spacing={"16px"}
     >
       <Box
         component={"img"}
         src={img}
-        sx={{ width: "100%", minHeight: "400px" }}
+        sx={{ height: isMobile ? "400px" : "320px", objectFit: "cover" }}
       />
       <Typography
         variant="header"
-        sx={{ fontSize: "32px", lineHeight: "53.76px", textAlign: "center" }}
+        sx={{
+          fontSize: "32px",
+          color: "#DCDCDC",
+          lineHeight: "53.76px",
+          textAlign: "center",
+        }}
       >
         {name}
       </Typography>
       <Typography
         sx={{
           fontSize: "16px",
-          color: "white",
+          color: "#DCDCDC",
           fontFamily: "Gotham Pro Light",
           lineHeight: "20.8px",
-          height: "380px",
           px: "10px",
           textAlign: "justify",
+          whiteSpace: "pre-line",
+          pb: "48px",
+          overflowY: "auto",
         }}
       >
         {desc}
@@ -51,25 +64,65 @@ const WinnerCard = ({ img, name, desc }: WinnerProps) => {
   );
 };
 
-const WinnersCarousel = () => {
+const WinnersCarousel = ({ isMobile }: Props) => {
+  const navigationPrevRef = React.useRef(null);
+  const navigationNextRef = React.useRef(null);
+  const breakpoints = useMediaQuery("(min-width:415px)");
+
+  const [showLeftArrow, setShowLeftArrow] = React.useState(false);
+  const [showRightArrow, setShowRightArrow] = React.useState(false);
+  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [isLastIndex, setIsLastIndex] = React.useState(false);
+
+  const handleOnMouse = (state: any) => {
+    if (activeIndex > 0) {
+      setShowLeftArrow(state);
+    } else {
+      setShowLeftArrow(false);
+    }
+    if (isLastIndex) {
+      setShowRightArrow(false);
+    } else {
+      setShowRightArrow(state);
+    }
+  };
+
+  const handleChangeIndex = (index: number, lastIndex: number) => {
+    setActiveIndex(index);
+    if (index === 0) {
+      setShowLeftArrow(false);
+    } else {
+      setShowLeftArrow(true);
+    }
+    if (lastIndex === 1) {
+      setIsLastIndex(true);
+      setShowRightArrow(false);
+    } else {
+      setIsLastIndex(false);
+      setShowRightArrow(true);
+    }
+  };
+
   return (
     <Box
       sx={{
         background: "#232323",
-        minHeight: "1276px",
+        minHeight: isMobile ? "1276px" : "1123px",
         width: "100%",
         position: "relative",
       }}
     >
       <Box
         sx={{
-          backgroundImage: "url(/images/bg/winners.png)",
+          backgroundImage: isMobile
+            ? "url(/images/bg/winners.png)"
+            : "url(/images/bg/mobile/winners.png)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "100% 100%",
           position: "absolute",
           width: "100%",
           height: "100%",
-          pt: "90px",
+          pt: isMobile ? "90px" : "64px",
         }}
       >
         <Stack
@@ -81,48 +134,110 @@ const WinnersCarousel = () => {
         >
           <Typography
             variant={"header"}
-            sx={{ fontSize: "96px", lineHeight: "76.8px" }}
+            sx={{
+              fontSize: isMobile ? "96px" : "48px",
+              lineHeight: isMobile ? "76.8px" : "57.6px",
+              textAlign: "center",
+            }}
           >
             Победители прошлого фестиваля
           </Typography>
         </Stack>
-        <Container disableGutters sx={{mt: "75px"}}>
-          <Swiper
-            modules={[FreeMode]}
-            slidesPerView={3}
-            direction={"horizontal"}
-            spaceBetween={"21px"}
-            freeMode={true}
-          >
-            <SwiperSlide>
-              <WinnerCard
-                img="images/gallery/winners/winner-1.png"
-                name="АНЖЕЛИКА СИДОРОВА"
-                desc="Серебряная Олимпийская чемпионка, чемпионка мира и трехкратная чемпионка Фестиваля прыжков с шестом!"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <WinnerCard
-                img="images/gallery/winners/winner-1.png"
-                name="АНЖЕЛИКА СИДОРОВА"
-                desc="Серебряная Олимпийская чемпионка, чемпионка мира и трехкратная чемпионка Фестиваля прыжков с шестом!"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <WinnerCard
-                img="images/gallery/winners/winner-1.png"
-                name="АНЖЕЛИКА СИДОРОВА"
-                desc="Серебряная Олимпийская чемпионка, чемпионка мира и трехкратная чемпионка Фестиваля прыжков с шестом!"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <WinnerCard
-                img="images/gallery/winners/winner-1.png"
-                name="АНЖЕЛИКА СИДОРОВА"
-                desc="Серебряная Олимпийская чемпионка, чемпионка мира и трехкратная чемпионка Фестиваля прыжков с шестом!"
-              />
-            </SwiperSlide>
-          </Swiper>
+        <Container disableGutters sx={{ mt: "75px", position: "relative" }}>
+          <Box sx={{ overflowX: "hidden" }}>
+            <Swiper
+              style={{
+                paddingLeft: isMobile ? "0px" : "15px",
+                overflowX: "hidden",
+              }}
+              modules={[Navigation]}
+              navigation={{
+                prevEl: navigationPrevRef.current,
+                nextEl: navigationNextRef.current,
+              }}
+              slidesPerView={isMobile ? 2.8 : breakpoints ? 1.5 : 1.2}
+              direction={"horizontal"}
+              spaceBetween={20}
+              onActiveIndexChange={(e: any) =>
+                handleChangeIndex(e.activeIndex, e.progress)
+              }
+              onReachBeginning={() => setShowLeftArrow(false)}
+              onReachEnd={() => setShowRightArrow(false)}
+            >
+              <SwiperSlide>
+                <WinnerCard
+                  img="images/gallery/winners/winner-1.png"
+                  name="АНЖЕЛИКА СИДОРОВА"
+                  desc="Серебряная Олимпийская чемпионка, чемпионка мира и трехкратная чемпионка Фестиваля прыжков с шестом!"
+                  isMobile={isMobile}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <WinnerCard
+                  img="images/gallery/winners/winner-2.png"
+                  name="Арина Разина"
+                  desc={`«Я беру собачек на время, пока их хозяева в отъезде, У меня в гостях побывало уже около 15 разных собак.
+                Обожаю сериалы и веду список, в нем уже 146 просмотренных. Часто пеку кексы и чизкейки, больше всего нравится их украшать. Иногда вышиваю крутые значки, мне в принципе доставляет удовольствие творчество: рисование или создание открыток.
+                «Мне часто говорят не перегибать палку, но как я могу их послушать, если я прыгаю с шестом»`}
+                  isMobile={isMobile}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <WinnerCard
+                  img="images/gallery/winners/winner-3.png"
+                  name="Ранэль Шафиков"
+                  desc="В легкой атлетике 6 лет. За это время становился чемпионом России и выполнил Высшее мировое достижение в многоборье.
+                «На будущее не загадываю, хочу реализовать себя, стать еще лучше и пусть Вирусомания в телах и головах людей закончится»"
+                  isMobile={isMobile}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <WinnerCard
+                  img="images/gallery/winners/winner-1.png"
+                  name="АНЖЕЛИКА СИДОРОВА"
+                  desc="Серебряная Олимпийская чемпионка, чемпионка мира и трехкратная чемпионка Фестиваля прыжков с шестом!"
+                  isMobile={isMobile}
+                />
+              </SwiperSlide>
+            </Swiper>
+            <Box
+              ref={navigationNextRef}
+              component={"img"}
+              src={
+                isMobile
+                  ? "images/logos/arrow.png"
+                  : "images/logos/arrow-mobile.png"
+              }
+              sx={{
+                height: isMobile ? "70px" : "64px",
+                maxWidth: isMobile ? "103px" : "60px",
+                position: "absolute",
+                right: isMobile ? "-45px" : 0,
+                top: "40%",
+                zIndex: 2,
+                display: showRightArrow ? "block" : "none",
+              }}
+            />
+            <Box
+              ref={navigationPrevRef}
+              component={"img"}
+              src={
+                isMobile
+                  ? "images/logos/arrow.png"
+                  : "images/logos/arrow-mobile.png"
+              }
+              sx={{
+                height: isMobile ? "70px" : "64px",
+                maxWidth: isMobile ? "103px" : "60px",
+                transform: "rotate(180deg)",
+                position: "absolute",
+                left: isMobile ? "-45px" : 0,
+                top: "40%",
+                zIndex: 2,
+                display: showLeftArrow ? "block" : "none",
+              }}
+            />
+          </Box>
         </Container>
       </Box>
     </Box>

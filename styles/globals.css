@@ -39,7 +39,6 @@
   /* Путь к файлу со шрифтом */
 }
 
-
 @font-face {
   font-family: Exo2;
   /* Гарнитура шрифта */
@@ -52,4 +51,8 @@
   /* Гарнитура шрифта */
   src: url(../public/fonts/Exo2-Light.ttf);
   /* Путь к файлу со шрифтом */
+}
+
+.swiper-slide-gallery {
+  width: 400px !important;
 }

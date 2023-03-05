@@ -3,21 +3,24 @@ import React from "react";
 
 interface Props {
   text: string;
+  isMobile: boolean;
 }
 
-const Header = ({ text }: Props) => {
+const Header = ({ text, isMobile }: Props) => {
   return (
     <Stack
       sx={{
-        height: "96px",
-        width: "650px",
+        height: isMobile ? "96px" : "64px",
+        width: isMobile ? "40%" : "87%",
         background: "linear-gradient(270deg, #EB605B 0%, #F0BC6E 100%)",
+        justifyContent: "center",
+        pl: isMobile ? "0px" : "30px",
       }}
-      alignItems={"center"}
+      alignItems={isMobile ? "center" : "flex-start"}
     >
       <Typography
         variant="header"
-        sx={{ fontSize: "64px", lineHeight: "83px" }}
+        sx={{ fontSize: isMobile ? "64px" : "48px", lineHeight: "83px" }}
       >
         {text}
       </Typography>

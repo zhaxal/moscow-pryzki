@@ -3,31 +3,38 @@ import { Container } from "@mui/system";
 import React from "react";
 import Header from "./ui/header";
 
-const Festival = () => {
+interface Props {
+  isMobile: boolean;
+}
+
+const Festival = ({ isMobile }: Props) => {
   return (
     <Box
       sx={{
-        backgroundImage: "url(/images/bg/festival.png)",
+        backgroundImage: isMobile
+          ? "url(/images/bg/festival.png)"
+          : "url(/images/bg/mobile/festival.png)",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "100% 100%",
-        minHeight: "888px",
+        backgroundSize: "cover",
+        minHeight: isMobile ? "888px" : "666px",
         width: "100%",
-        pt: "94px",
+        pt: "96px",
       }}
     >
-      <Header text="фестиваль 2022" />
+      <Header isMobile={isMobile} text="фестиваль 2022" />
       <Container
         disableGutters
         sx={{
-          mt: "90px",
+          mt: isMobile ? "90px" : "42px",
+          px: isMobile ? "0px" : "15px",
         }}
-        maxWidth={"md"}
+        maxWidth={isMobile ? "md" : false}
       >
         <iframe
           src="https://www.youtube.com/embed/dQw4w9WgXcQ"
           allowFullScreen
           frameBorder={"0px"}
-          height="488px"
+          height={isMobile ? "488px" : "254px"}
           width={"100%"}
         />
       </Container>

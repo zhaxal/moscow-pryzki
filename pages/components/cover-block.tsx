@@ -1,7 +1,11 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import React from "react";
 
-const Cover = () => {
+interface Props {
+  isMobile: boolean;
+}
+
+const Cover = ({ isMobile }: Props) => {
   return (
     <Box
       sx={{
@@ -12,26 +16,44 @@ const Cover = () => {
         width: "100%",
       }}
     >
-      <Container disableGutters>
-        <Stack direction={"column"} sx={{ mt: "50px" }} spacing="175px">
-          <Stack direction={"row"} justifyContent={"space-between"}>
-            <Stack direction={"row"} spacing={"16px"} alignItems={"center"}>
+      <Container
+        disableGutters
+        maxWidth={isMobile ? "lg" : "xs"}
+        sx={{ px: isMobile ? "0px" : "40px" }}
+      >
+        <Stack
+          direction={"column"}
+          sx={{ mt: "50px" }}
+          spacing={isMobile ? "175px" : "130px"}
+        >
+          <Stack
+            direction={isMobile ? "row" : "column"}
+            justifyContent={"space-between"}
+          >
+            <Stack
+              direction={"row"}
+              spacing={"16px"}
+              alignItems={isMobile ? "center" : "flex-start"}
+            >
               <Box
                 component={"img"}
                 src={"images/logos/departmentLogo.svg"}
-                sx={{ maxWidth: "80px" }}
+                sx={{ maxWidth: isMobile ? "80px" : "54px" }}
                 alt={"departmentLogo"}
               />
               <Box
                 component={"img"}
                 src={"images/logos/mossportLogo.svg"}
-                sx={{ maxWidth: "70px" }}
+                sx={{ maxWidth: isMobile ? "70px" : "47px" }}
                 alt={"mossportLogo"}
               />
               <Box
                 component={"img"}
                 src={"images/logos/100yearLogo.svg"}
-                sx={{ maxWidth: "246px", maxHeight: "68px" }}
+                sx={{
+                  maxWidth: isMobile ? "246px" : "167px",
+                  maxHeight: "68px",
+                }}
                 alt={"100yearLogo"}
               />
             </Stack>
@@ -40,7 +62,7 @@ const Cover = () => {
                 textAlign: "right",
                 whiteSpace: "pre-line",
                 fontSize: "1em",
-                lineHeight: "22.59px",
+                lineHeight: isMobile ? "22.59px" : "21.26px",
                 letterSpacing: "0.1em",
               }}
               variant={"cover"}
@@ -54,13 +76,13 @@ const Cover = () => {
           <Stack
             direction={"column"}
             spacing={"10px"}
-            sx={{ paddingLeft: "15px" }}
+            sx={{ paddingLeft: isMobile ? "15px" : "0px" }}
           >
             <Typography
               variant={"cover"}
               sx={{
-                fontSize: "2em",
-                lineHeight: "39.87px",
+                fontSize: isMobile ? "2em" : "20px",
+                lineHeight: isMobile ? "39.87px" : "26.58px",
                 letterSpacing: "0.1em",
               }}
             >
@@ -69,10 +91,11 @@ const Cover = () => {
             <Typography
               variant={"cover"}
               sx={{
-                fontSize: "4em",
-                lineHeight: "77px",
+                fontSize: isMobile ? "4em" : "2em",
+                lineHeight: isMobile ? "77px" : "38.4px",
                 whiteSpace: "pre-line",
                 fontFamily: "Exo2",
+                pb: "20px"
               }}
             >
               {`ВСЕРОССИЙСКИЙ ФЕСТИВАЛЬ
@@ -81,7 +104,7 @@ const Cover = () => {
             <Button
               sx={{
                 border: "1px solid #FFFFFF",
-                maxWidth: "238px",
+                maxWidth: isMobile ? "238px" : "175px",
                 height: "57px",
                 fontFamily: "Exo2-Light",
                 color: "white",
