@@ -31,8 +31,9 @@ const Festival = ({ isMobile }: Props) => {
         maxWidth={isMobile ? "md" : false}
       >
         <iframe
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          src="https://www.youtube.com/embed/2PHTD4stLkA"
           allowFullScreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           frameBorder={"0px"}
           height={isMobile ? "488px" : "254px"}
           width={"100%"}

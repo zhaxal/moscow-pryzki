@@ -162,6 +162,7 @@ const WinnersCarousel = ({ isMobile }: Props) => {
               slidesPerView={isMobile ? 2.8 : breakpoints ? 1.5 : 1.2}
               direction={"horizontal"}
               spaceBetween={20}
+              resistance={false}
               onActiveIndexChange={(e: any) =>
                 handleChangeIndex(e.activeIndex, e.progress)
               }

@@ -48,16 +48,17 @@ const ProgramSchedule = ({ date, desc, isMobile }: DateProps) => {
         maxWidth: isMobile ? "540px" : "100%",
         background: "#F2F2F2",
         alignItems: "center",
-        px: "8px",
+        px: isMobile ? "8px" : "2px",
       }}
       direction={"row"}
     >
       <Typography
         sx={{
-          fontSize: isMobile ? "24px" : "20px",
+          fontSize: isMobile ? "24px" : "15px",
           lineHeight: isMobile ? "22.97px" : "19.14px",
           fontWeight: 700,
           fontFamily: "Gotham Pro Bold",
+          textAlign: "center",
           width: isMobile ? "31%" : "30%",
         }}
       >
@@ -65,7 +66,7 @@ const ProgramSchedule = ({ date, desc, isMobile }: DateProps) => {
       </Typography>
       <Typography
         sx={{
-          fontSize: isMobile ? "24px" : "20px",
+          fontSize: isMobile ? "24px" : "16px",
           lineHeight: isMobile ? "22.97px" : "19.14px",
           fontWeight: 400,
           fontFamily: "Gotham Pro Light",
@@ -95,7 +96,7 @@ const Programs = ({ isMobile }: Props) => {
             ? "url(/images/bg/programs.png)"
             : "url(/images/bg/mobile/programs.png)",
           backgroundRepeat: "no-repeat",
-          backgroundSize: "100% 100%",
+          backgroundSize: "cover",
           width: "100%",
           position: "absolute",
           height: "100%",
