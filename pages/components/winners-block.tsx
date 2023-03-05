@@ -144,7 +144,11 @@ const WinnersCarousel = ({ isMobile }: Props) => {
           </Typography>
         </Stack>
         <Container disableGutters sx={{ mt: "75px", position: "relative" }}>
-          <Box sx={{ overflowX: "hidden" }}>
+          <Box
+            sx={{ overflowX: "hidden" }}
+            onMouseEnter={(event) => handleOnMouse(event)}
+            onMouseLeave={() => handleOnMouse(false)}
+          >
             <Swiper
               style={{
                 paddingLeft: isMobile ? "0px" : "15px",
