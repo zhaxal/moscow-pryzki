@@ -1,11 +1,17 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { RefObject } from "react";
 
 interface Props {
   isMobile: boolean;
+  scrollRef: any;
 }
 
-const Cover = ({ isMobile }: Props) => {
+const Cover = ({ isMobile, scrollRef }: Props) => {
+  const executeScroll = () => {
+    if (scrollRef.current)
+      scrollRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <Box
       sx={{
@@ -95,7 +101,7 @@ const Cover = ({ isMobile }: Props) => {
                 lineHeight: isMobile ? "77px" : "38.4px",
                 whiteSpace: "pre-line",
                 fontFamily: "Exo2",
-                pb: "20px"
+                pb: "20px",
               }}
             >
               {`ВСЕРОССИЙСКИЙ ФЕСТИВАЛЬ
@@ -112,6 +118,7 @@ const Cover = ({ isMobile }: Props) => {
                 lineHeight: "22.59px",
                 letterSpacing: "0.1em",
               }}
+              onClick={executeScroll}
             >
               Расписание
             </Button>

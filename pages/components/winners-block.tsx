@@ -54,8 +54,6 @@ const WinnerCard = ({ img, name, desc, isMobile }: WinnerProps) => {
           px: "10px",
           textAlign: "justify",
           whiteSpace: "pre-line",
-          pb: "48px",
-          overflowY: "auto",
         }}
       >
         {desc}
@@ -70,22 +68,22 @@ const WinnersCarousel = ({ isMobile }: Props) => {
   const breakpoints = useMediaQuery("(min-width:415px)");
 
   const [showLeftArrow, setShowLeftArrow] = React.useState(false);
-  const [showRightArrow, setShowRightArrow] = React.useState(false);
+  const [showRightArrow, setShowRightArrow] = React.useState(true);
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [isLastIndex, setIsLastIndex] = React.useState(false);
 
-  const handleOnMouse = (state: any) => {
-    if (activeIndex > 0) {
-      setShowLeftArrow(state);
-    } else {
-      setShowLeftArrow(false);
-    }
-    if (isLastIndex) {
-      setShowRightArrow(false);
-    } else {
-      setShowRightArrow(state);
-    }
-  };
+  // const handleOnMouse = (state: any) => {
+  //   if (activeIndex > 0) {
+  //     setShowLeftArrow(state);
+  //   } else {
+  //     setShowLeftArrow(false);
+  //   }
+  //   if (isLastIndex) {
+  //     setShowRightArrow(false);
+  //   } else {
+  //     setShowRightArrow(state);
+  //   }
+  // };
 
   const handleChangeIndex = (index: number, lastIndex: number) => {
     setActiveIndex(index);
@@ -144,15 +142,10 @@ const WinnersCarousel = ({ isMobile }: Props) => {
           </Typography>
         </Stack>
         <Container disableGutters sx={{ mt: "75px", position: "relative" }}>
-          <Box
-            sx={{ overflowX: "hidden" }}
-            onMouseEnter={(event) => handleOnMouse(event)}
-            onMouseLeave={() => handleOnMouse(false)}
-          >
+          <Box sx={{ overflowX: "hidden" }}>
             <Swiper
               style={{
                 paddingLeft: isMobile ? "0px" : "15px",
-                overflowX: "hidden",
               }}
               modules={[Navigation]}
               navigation={{
@@ -198,9 +191,18 @@ const WinnersCarousel = ({ isMobile }: Props) => {
               </SwiperSlide>
               <SwiperSlide>
                 <WinnerCard
-                  img="images/gallery/winners/winner-1.png"
-                  name="АНЖЕЛИКА СИДОРОВА"
-                  desc="Серебряная Олимпийская чемпионка, чемпионка мира и трехкратная чемпионка Фестиваля прыжков с шестом!"
+                  img="images/gallery/winners/winner-4.png"
+                  name="Ангелина Ляпорова"
+                  desc="С раннего возраста занималась спортивной гимнастикой и в возрасте 13 лет решила для себя, что летать намного круче кувырков и шпагатов! С первой тренировки буквально «заглядывала в рот тренеру» во время объяснения техники и нюансов прыжка, и уже через 10 месяцев выполнила норматив кандидата в мастера спорта, и в этом же сезоне неожиданно выиграла первый свой крупный старт: «Фестиваль прыжков с шестом»
+                  Мечтает летать и наблюдать за всем с высоты))))"
+                  isMobile={isMobile}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <WinnerCard
+                  img="images/gallery/winners/winner-5.png"
+                  name="Виктор Пинтусов"
+                  desc="Победитель фестиваля 2022 года с результатом 5.70. Знаменит в сообществе прыжков с шестом — отменным вкусом на носки."
                   isMobile={isMobile}
                 />
               </SwiperSlide>

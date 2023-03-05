@@ -3,6 +3,7 @@ import React from "react";
 
 interface Props {
   isMobile: boolean;
+  scrollRef: any;
 }
 
 interface HeaderProps {
@@ -79,9 +80,10 @@ const ProgramSchedule = ({ date, desc, isMobile }: DateProps) => {
   );
 };
 
-const Programs = ({ isMobile }: Props) => {
+const Programs = ({ isMobile, scrollRef }: Props) => {
   return (
     <Box
+      ref={scrollRef}
       sx={{
         background:
           "linear-gradient(218.58deg, #83D0F7 10.35%, #8D98DA 94.68%)",
