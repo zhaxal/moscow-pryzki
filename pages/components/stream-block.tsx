@@ -22,7 +22,8 @@ const Stream = ({ isMobile }: Props) => {
             ? "url(/images/bg/stream.png)"
             : "url(/images/bg/mobile/stream.png)",
           backgroundRepeat: "no-repeat",
-          backgroundSize: "100% 100%",
+          backgroundSize: "cover",
+          backgroundAttachment: "scroll",
           position: "absolute",
           width: "100%",
           height: "100%",
@@ -52,8 +53,9 @@ const Stream = ({ isMobile }: Props) => {
           }}
         >
           <iframe
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            src="https://www.youtube.com/embed/2PHTD4stLkA"
             allowFullScreen
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             frameBorder={"0px"}
             height={isMobile ? "694px" : "267px"}
             width={"100%"}
