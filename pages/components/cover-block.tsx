@@ -1,4 +1,11 @@
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import React, { RefObject } from "react";
 
 interface Props {
@@ -12,6 +19,8 @@ const Cover = ({ isMobile, scrollRef }: Props) => {
       scrollRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  const isIphone = useMediaQuery("(min-width:430px)");
+
   return (
     <Box
       sx={{
@@ -24,8 +33,8 @@ const Cover = ({ isMobile, scrollRef }: Props) => {
     >
       <Container
         disableGutters
-        maxWidth={isMobile ? "lg" : "xs"}
-        sx={{ px: isMobile ? "0px" : "40px" }}
+        maxWidth={"md"}
+        sx={{ px: isMobile ? "0px" : "30px" }}
       >
         <Stack
           direction={"column"}
@@ -44,23 +53,32 @@ const Cover = ({ isMobile, scrollRef }: Props) => {
               <Box
                 component={"img"}
                 src={"images/logos/departmentLogo.svg"}
-                sx={{ maxWidth: isMobile ? "80px" : "54px" }}
+                sx={{ maxWidth: isMobile ? "80px" : "47px" }}
                 alt={"departmentLogo"}
               />
               <Box
                 component={"img"}
                 src={"images/logos/mossportLogo.svg"}
-                sx={{ maxWidth: isMobile ? "70px" : "47px" }}
+                sx={{ maxWidth: isMobile ? "70px" : "41px" }}
                 alt={"mossportLogo"}
               />
               <Box
                 component={"img"}
                 src={"images/logos/100yearLogo.svg"}
                 sx={{
-                  maxWidth: isMobile ? "246px" : "167px",
-                  maxHeight: "68px",
+                  maxWidth: isMobile ? "246px" : isIphone ? "145px" : "100px",
+                  maxHeight: isMobile ? "68px" : "39px",
                 }}
                 alt={"100yearLogo"}
+              />
+              <Box
+                component={"img"}
+                src={"images/logos/sozvezdieLogo.svg"}
+                sx={{
+                  maxWidth: isMobile ? "216px" : isIphone ? "127px" : "100px",
+                  maxHeight: isMobile ? "95px" : "55px",
+                }}
+                alt={"sozvezdieLogo"}
               />
             </Stack>
             <Typography

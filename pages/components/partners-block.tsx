@@ -1,4 +1,5 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import { maxWidth } from "@mui/system";
 import React from "react";
 
 interface Props {
@@ -11,7 +12,7 @@ const Partners = ({ isMobile }: Props) => {
       sx={{
         background:
           "linear-gradient(244.94deg, rgba(152, 58, 121, 0.72) 26.75%, rgba(220, 74, 75, 0.72) 96.58%)",
-        minHeight: "879px",
+        minHeight: isMobile ? "879px" : "1239px",
         width: "100%",
         position: "relative",
       }}
@@ -53,32 +54,89 @@ const Partners = ({ isMobile }: Props) => {
             px: isMobile ? "0px" : "45px",
           }}
         >
-          <Stack
+          <Grid
             sx={{
               background: "rgba(196, 196, 196, 0.69)",
-              height: isMobile ? "197px" : "587px",
+              height: "100%",
               width: "100%",
-              alignItems: "center",
-              justifyContent: "space-around",
+              py: "50px",
             }}
-            direction={isMobile ? "row" : "column"}
+            container
+            rowGap={"90px"}
           >
-            <Box
-              component={"img"}
-              src={"images/logos/departmentLogo.png"}
-              sx={{ maxWidth: "80%" }}
-            />
-            <Box
-              component={"img"}
-              src={"images/logos/mossportLogo.png"}
-              sx={{ maxWidth: "90%" }}
-            />
-            <Box
-              component={"img"}
-              src={"images/logos/pvteamLogo.png"}
-              sx={{ maxWidth: isMobile ? "354px" : "95%" }}
-            />
-          </Stack>
+            <Grid item md={4} style={{ textAlign: "center", width: "100%" }}>
+              <Box
+                component={"img"}
+                src={"images/logos/departmentLogo.png"}
+                maxWidth={"90%"}
+              />
+            </Grid>
+            <Grid item md={4} style={{ textAlign: "center", width: "100%" }}>
+              <Box
+                component={"img"}
+                src={"images/logos/mossportLogo.png"}
+                maxWidth={"90%"}
+              />
+            </Grid>
+            <Grid item md={4} style={{ textAlign: "center", width: "100%" }}>
+              <Box
+                component={"img"}
+                src={"images/logos/sozvezdieLogo.png"}
+                maxWidth={"90%"}
+              />
+            </Grid>
+            {isMobile ? (
+              <>
+                <Grid
+                  item
+                  md={4}
+                  style={{ textAlign: "center", width: "100%" }}
+                >
+                  <Box
+                    component={"img"}
+                    src={"images/logos/tukanLogo.png"}
+                    maxWidth={"90%"}
+                  />
+                </Grid>
+                <Grid
+                  item
+                  md={4}
+                  style={{ textAlign: "center", width: "100%" }}
+                >
+                  <Box
+                    component={"img"}
+                    src={"images/logos/pvteamLogo.png"}
+                    maxWidth={"90%"}
+                  />
+                </Grid>
+              </>
+            ) : (
+              <>
+                <Grid
+                  item
+                  md={4}
+                  style={{ textAlign: "center", width: "100%" }}
+                >
+                  <Box
+                    component={"img"}
+                    src={"images/logos/pvteamLogo.png"}
+                    maxWidth={"90%"}
+                  />
+                </Grid>
+                <Grid
+                  item
+                  md={4}
+                  style={{ textAlign: "center", width: "100%" }}
+                >
+                  <Box
+                    component={"img"}
+                    src={"images/logos/tukanLogo.png"}
+                    maxWidth={"90%"}
+                  />
+                </Grid>
+              </>
+            )}
+          </Grid>
         </Container>
       </Box>
     </Box>
