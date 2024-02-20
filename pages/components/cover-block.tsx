@@ -64,15 +64,6 @@ const Cover = ({ isMobile, scrollRef }: Props) => {
               />
               <Box
                 component={"img"}
-                src={"images/logos/100yearLogo.svg"}
-                sx={{
-                  maxWidth: isMobile ? "246px" : isIphone ? "145px" : "100px",
-                  maxHeight: isMobile ? "68px" : "39px",
-                }}
-                alt={"100yearLogo"}
-              />
-              <Box
-                component={"img"}
                 src={"images/logos/sozvezdieLogo.svg"}
                 sx={{
                   maxWidth: isMobile ? "216px" : isIphone ? "127px" : "100px",

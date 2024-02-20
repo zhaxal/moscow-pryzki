@@ -46,7 +46,7 @@ const ProgramSchedule = ({ date, desc, isMobile }: DateProps) => {
     <Stack
       sx={{
         minHeight: "57px",
-        maxWidth: isMobile ? "540px" : "100%",
+        maxWidth: isMobile ? "784px" : "100%",
         background: "#F2F2F2",
         alignItems: "center",
         px: isMobile ? "8px" : "2px",
@@ -85,8 +85,6 @@ const Programs = ({ isMobile, scrollRef }: Props) => {
     <Box
       ref={scrollRef}
       sx={{
-        background:
-          "linear-gradient(218.58deg, #83D0F7 10.35%, #8D98DA 94.68%)",
         minHeight: isMobile ? "1024px" : "1349px",
         width: "100%",
         position: "relative",
@@ -95,8 +93,8 @@ const Programs = ({ isMobile, scrollRef }: Props) => {
       <Box
         sx={{
           backgroundImage: isMobile
-            ? "url(/images/bg/programs.png)"
-            : "url(/images/bg/mobile/programs.png)",
+            ? "url(/images/bg/bg_cringe.png)"
+            : "url(/images/bg/mobile/bg_cringe_mob.png)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           width: "100%",
@@ -125,7 +123,7 @@ const Programs = ({ isMobile, scrollRef }: Props) => {
         <Container disableGutters sx={{ mt: isMobile ? "119px" : "42px" }}>
           <Stack
             direction={isMobile ? "row" : "column"}
-            justifyContent={isMobile ? "space-between" : "flex-start"}
+            justifyContent={"center"}
             spacing={isMobile ? "60px" : "64px"}
           >
             <Stack
@@ -133,45 +131,50 @@ const Programs = ({ isMobile, scrollRef }: Props) => {
               spacing={isMobile ? "56px" : "48px"}
               alignItems={"center"}
             >
-              <ProgramHeader text="11 марта" isMobile={isMobile} />
+              <ProgramHeader text="3 марта" isMobile={isMobile} />
               <Stack
                 direction={"column"}
                 sx={{ px: isMobile ? "0px" : "15px" }}
                 spacing={"8px"}
               >
                 <ProgramSchedule
-                  date="10:00-12:30"
+                  date="09:30"
                   desc="I поток (до 14 лет и моложе)"
                   isMobile={isMobile}
                 />
                 <ProgramSchedule
-                  date="12:30-13:30"
+                  date="12:00"
                   desc="Разминка II потока. Награждение I потока."
                   isMobile={isMobile}
                 />
                 <ProgramSchedule
-                  date="13:30-16:00"
+                  date="12:20"
                   desc="II поток (юноши и девушки до 16 лет)"
                   isMobile={isMobile}
                 />
                 <ProgramSchedule
-                  date="16:00-17:00"
+                  date="15:30"
                   desc="Разминка III потока. Награждение II потока"
                   isMobile={isMobile}
                 />
                 <ProgramSchedule
-                  date="17:00-19:30"
+                  date="17:45"
                   desc="III поток (юноши и девушки до 18 лет)"
                   isMobile={isMobile}
                 />
                 <ProgramSchedule
-                  date="19:30-19:45"
-                  desc="Награждение III потока"
+                  date="18:30"
+                  desc="Церемония открытия соревнований. Основной поток "
+                  isMobile={isMobile}
+                />
+                <ProgramSchedule
+                  date="20:45"
+                  desc="Награждение. Церемония закрытия соревнований."
                   isMobile={isMobile}
                 />
               </Stack>
             </Stack>
-            <Stack direction={"column"} spacing={"56px"} alignItems={"center"}>
+            {/* <Stack direction={"column"} spacing={"56px"} alignItems={"center"}>
               <ProgramHeader text="12 марта" isMobile={isMobile} />
               <Stack
                 direction={"column"}
@@ -209,7 +212,7 @@ const Programs = ({ isMobile, scrollRef }: Props) => {
                   isMobile={isMobile}
                 />
               </Stack>
-            </Stack>
+            </Stack> */}
           </Stack>
         </Container>
       </Box>

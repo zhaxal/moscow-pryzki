@@ -11,7 +11,7 @@ const Partners = ({ isMobile }: Props) => {
     <Box
       sx={{
         background:
-          "linear-gradient(244.94deg, rgba(152, 58, 121, 0.72) 26.75%, rgba(220, 74, 75, 0.72) 96.58%)",
+          "linear-gradient(230deg, #229ffb 0%, #54dae6 46.09%, #8c64de 100%)",
         minHeight: isMobile ? "879px" : "1239px",
         width: "100%",
         position: "relative",
@@ -20,8 +20,8 @@ const Partners = ({ isMobile }: Props) => {
       <Box
         sx={{
           backgroundImage: isMobile
-            ? "url(/images/bg/partners.png)"
-            : "url(/images/bg/mobile/partners.png)",
+            ? "url(/images/bg/partners.svg)"
+            : "url(/images/bg/mobile/partners_mob.svg)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           position: "absolute",
@@ -101,11 +101,16 @@ const Partners = ({ isMobile }: Props) => {
                 <Grid
                   item
                   md={4}
-                  style={{ textAlign: "center", width: "100%" }}
+                  style={{
+                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    width: "100%",
+                  }}
                 >
                   <Box
                     component={"img"}
-                    src={"images/logos/pvteamLogo.png"}
+                    src={"images/logos/alfa.svg"}
                     maxWidth={"90%"}
                   />
                 </Grid>

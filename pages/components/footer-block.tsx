@@ -49,12 +49,12 @@ const Footer = ({ isMobile }: Props) => {
             <Box
               dangerouslySetInnerHTML={{
                 __html:
-                  "<div style='font-family: Gotham Pro Regular; font-weight: 400; font-size: 32px; line-height: 41.6px'>Государственный центральный концертный зал «Россия» <div style='font-family: Gotham Pro Bold; font-weight: 700; font-size: 32px; line-height: 41.6px'>ГЦКЗ «Россия» в Лужниках</div></div>",
+                  "<div style='font-family: Gotham Pro Bold; font-weight: 700; font-size: 32px; line-height: 41.6px'>Легкоатлетический манеж НИУ МГСУ <div style='font-family: Gotham Pro Regular; font-weight: 400; font-size: 32px; line-height: 41.6px'>Ярославское шоссе, 26 корпус 4</div></div>",
               }}
             />
           </Stack>
           <iframe
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3A93d017a5319673bab48bc90cb05a0de843df6b2e25d3f5b969652bc4fc94cc2e&amp;source=constructor"
+            src="https://yandex.com/map-widget/v1/?um=constructor%3A0076321db6c1dd162901cb381f7e13a05e99bdd51d8487ca385e52a7966c4384&amp;source=constructor"
             height={isMobile ? "100%" : "50%"}
             width={isMobile ? "50%" : "100%"}
             frameBorder="0"
