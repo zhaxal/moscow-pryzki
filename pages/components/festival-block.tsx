@@ -21,7 +21,7 @@ const Festival = ({ isMobile }: Props) => {
         pt: "96px",
       }}
     >
-      <Header isMobile={isMobile} text="фестиваль 2022" />
+      <Header isMobile={isMobile} text="фестиваль 2023" />
       <Container
         disableGutters
         sx={{

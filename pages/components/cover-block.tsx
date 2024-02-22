@@ -82,9 +82,7 @@ const Cover = ({ isMobile, scrollRef }: Props) => {
               }}
               variant={"cover"}
             >
-              {`Дворец спорта
-              Олимпийского комплекса
-              «Лужники» `}
+              {`ЛЕГКОАТЛЕТИЧЕСКИЙ МАНЕЖ НИУ МГСУ `}
             </Typography>
           </Stack>
 
@@ -101,7 +99,7 @@ const Cover = ({ isMobile, scrollRef }: Props) => {
                 letterSpacing: "0.1em",
               }}
             >
-              11-12 марта 2022
+              3 марта 2024
             </Typography>
             <Typography
               variant={"cover"}

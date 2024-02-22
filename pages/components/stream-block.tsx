@@ -53,7 +53,8 @@ const Stream = ({ isMobile }: Props) => {
           }}
         >
           <iframe
-            src="https://www.youtube.com/embed/2PHTD4stLkA"
+            src="https://www.youtube.com/embed/8FkNGCNXnw0?si=pD-niekI4hEkQDBP"
+            title="YouTube video player"
             allowFullScreen
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             frameBorder={"0px"}
