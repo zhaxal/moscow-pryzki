@@ -99,7 +99,7 @@ const Cover = ({ isMobile, scrollRef }: Props) => {
                 letterSpacing: "0.1em",
               }}
             >
-              3 марта 2024
+              8 — 9 марта 2025
             </Typography>
             <Typography
               variant={"cover"}

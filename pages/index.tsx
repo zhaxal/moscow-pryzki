@@ -21,7 +21,7 @@ export default function Home() {
     <Stack sx={{ direction: "column", width: "100%" }}>
       <Cover isMobile={isMobile} scrollRef={scrollRef} />
       <About isMobile={isMobile} />
-      <Festival isMobile={isMobile} />
+      {/* <Festival isMobile={isMobile} /> */}
       <Box
         sx={{
           backgroundImage: isMobile
@@ -34,8 +34,8 @@ export default function Home() {
           objectFit: "cover",
         }}
       />
-      <Programs isMobile={isMobile} scrollRef={scrollRef} />
-      <Stream isMobile={isMobile} />
+      {/* <Programs isMobile={isMobile} scrollRef={scrollRef} /> */}
+      {/* <Stream isMobile={isMobile} /> */}
       <WinnersCarousel isMobile={isMobile} />
       <GalleryBlock isMobile={isMobile} />
       <Partners isMobile={isMobile} />

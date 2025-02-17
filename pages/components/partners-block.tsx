@@ -108,11 +108,11 @@ const Partners = ({ isMobile }: Props) => {
                     width: "100%",
                   }}
                 >
-                  <Box
+                  {/* <Box
                     component={"img"}
                     src={"images/logos/alfa.svg"}
                     maxWidth={"90%"}
-                  />
+                  /> */}
                 </Grid>
               </>
             ) : (
