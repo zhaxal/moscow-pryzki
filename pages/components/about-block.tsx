@@ -78,15 +78,6 @@ const About = ({ isMobile }: Props) => {
             >
               <Box
                 component={"img"}
-                src={"images/gallery/about-left-1.png"}
-                sx={{
-                  maxHeight: isMobile ? "344px" : "277px",
-                  maxWidth: isMobile ? "344px" : "48%",
-                }}
-                alt={"about-left-1"}
-              />
-              <Box
-                component={"img"}
                 src={"images/gallery/about-left-2.png"}
                 sx={{
                   maxHeight: isMobile ? "344px" : "277px",
@@ -94,20 +85,29 @@ const About = ({ isMobile }: Props) => {
                 }}
                 alt={"about-left-2"}
               />
+              <Box
+                component={"img"}
+                src={"images/gallery/about-left-1.png"}
+                sx={{
+                  maxHeight: isMobile ? "344px" : "277px",
+                  maxWidth: isMobile ? "344px" : "48%",
+                }}
+                alt={"about-left-1"}
+              />
             </Stack>
           </Stack>
-          <Stack
+            <Stack
             direction={"column"}
             spacing={isLaptop ? "19px" : "40px"}
             sx={{ px: isLaptop ? "0px" : "15px" }}
-          >
+            >
             <Typography
               variant="body"
               sx={{
-                fontSize: "25px",
-                lineHeight: "23.93px",
-                fontFamily: "Gotham Pro Medium",
-                textTransform: "uppercase",
+              fontSize: "25px",
+              lineHeight: "23.93px",
+              fontFamily: "Gotham Pro Medium",
+              textTransform: "uppercase",
               }}
             >
               Традиции
@@ -115,13 +115,13 @@ const About = ({ isMobile }: Props) => {
             <Typography
               variant="body"
               sx={{
-                fontSize: "1em",
-                lineHeight: "18.29px",
-                minHeight: isLaptop ? "192px" : "100%",
-                textAlign: "justify",
+              fontSize: "1em",
+              lineHeight: "18.29px",
+              minHeight: isLaptop ? "192px" : "100%",
+              textAlign: "justify",
               }}
             >
-              Этот фестиваль — не только праздник спорта, но и праздник русской
+              Этот фестиваль — не только праздник спорта, но и праздник русской
               культуры и прекрасного вкуса. Зрителей ждёт уникальная спортивная
               арена страны с богатыми спортивными и культурными традициями,
               красочные Церемонии открытия и закрытия фестиваля, прекрасные
@@ -135,9 +135,13 @@ const About = ({ isMobile }: Props) => {
               component={"img"}
               src={"images/gallery/about-right.png"}
               alt={"about-right"}
-              sx={{ maxHeight: isMobile ? "344px" : "275px" }}
+              sx={{ 
+              maxHeight: isMobile ? "344px" : "275px",
+              objectFit: "contain",
+              width: "100%"
+              }}
             />
-          </Stack>
+            </Stack>
         </Stack>
       </Container>
     </Box>

@@ -9,16 +9,21 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <meta property="og:title" content="Фестиваль прыжков с шестом" />
         <meta
-          property="description"
+          name="description"
           content="Ежегодный Всероссийский фестиваль прыжков с шестом - место притяжения лучших шестовиков России"
         />
-        <meta property="og:url" content="https://pryzki.moscow.sport/" />
+        <meta
+          property="og:title"
+          content="Всероссийский фестиваль прыжков с шестом"
+        />
+        <meta
+          property="og:description"
+          content="Московский спорт представляет «Всероссийский фестиваль прыжков с шестом» 8 и 9 марта 2025 г."
+        />
+        <meta property="og:url" content="https://pryzki.sport.mos.ru" />
         <meta property="og:type" content="website" />
-        {/* <meta property="og:image" content="/images/icelogo.png" />
-        <link rel="icon" href="/icelogo.ico" /> */}
-        <title>Фестиваль прыжков с шестом</title>
+        <title>Всероссийский фестиваль прыжков с шестом</title>
       </Head>
       <Script
         id="metaScript"
@@ -27,19 +32,19 @@ export default function App({ Component, pageProps }: AppProps) {
           __html: JSON.stringify({
             "@context": "http://www.schema.org",
             "@type": "SportsEvent",
-            name: "Фестиваль прыжков с шестом",
+            name: "Всероссийский фестиваль прыжков с шестом",
             url: "https://pryzki.moscow.sport/",
             description:
               "Ежегодный Всероссийский фестиваль прыжков с шестом - место притяжения лучших шестовиков России",
-            startDate: "2023-03-11T10:00",
-            endDate: "2023-03-12T20:30",
+            startDate: "2025-03-08T10:00",
+            endDate: "2025-03-09T20:30",
             location: {
               "@type": "Place",
-              name: "ГЦКЗ «РОССИЯ»",
+              name: "Легкоатлетический манеж НИУ МГСУ",
               sameAs: "https://pryzki.moscow.sport/",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "ул. Лужники, 24, стр. 2",
+                streetAddress: "Ярославское шоссе, 26 корпус 4",
                 addressLocality: "г. Москва",
               },
             },
