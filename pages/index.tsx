@@ -34,7 +34,7 @@ export default function Home() {
           objectFit: "cover",
         }}
       />
-      {/* <Programs isMobile={isMobile} scrollRef={scrollRef} /> */}
+      <Programs isMobile={isMobile} scrollRef={scrollRef} />
       {/* <Stream isMobile={isMobile} /> */}
       <WinnersCarousel isMobile={isMobile} />
       <GalleryBlock isMobile={isMobile} />

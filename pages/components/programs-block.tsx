@@ -85,7 +85,7 @@ const Programs = ({ isMobile, scrollRef }: Props) => {
     <Box
       ref={scrollRef}
       sx={{
-        minHeight: isMobile ? "1024px" : "1349px",
+        minHeight: isMobile ? "1024px" : "1549px",
         width: "100%",
         position: "relative",
       }}
@@ -131,88 +131,98 @@ const Programs = ({ isMobile, scrollRef }: Props) => {
               spacing={isMobile ? "56px" : "48px"}
               alignItems={"center"}
             >
-              <ProgramHeader text="3 марта" isMobile={isMobile} />
+              <ProgramHeader text="8 МАРТА" isMobile={isMobile} />
               <Stack
                 direction={"column"}
                 sx={{ px: isMobile ? "0px" : "15px" }}
                 spacing={"8px"}
               >
                 <ProgramSchedule
-                  date="09:30"
-                  desc="I поток (до 14 лет и моложе)"
+                  date="10:50"
+                  desc="1 поток (юноши и девушки до 16 лет, до 18 лет)"
                   isMobile={isMobile}
                 />
                 <ProgramSchedule
-                  date="12:00"
-                  desc="Разминка II потока. Награждение I потока."
-                  isMobile={isMobile}
-                />
-                <ProgramSchedule
-                  date="12:20"
-                  desc="II поток (юноши и девушки до 16 лет)"
-                  isMobile={isMobile}
-                />
-                <ProgramSchedule
-                  date="15:30"
-                  desc="Разминка III потока. Награждение II потока"
-                  isMobile={isMobile}
-                />
-                <ProgramSchedule
-                  date="17:45"
-                  desc="III поток (юноши и девушки до 18 лет)"
-                  isMobile={isMobile}
-                />
-                <ProgramSchedule
-                  date="18:30"
-                  desc="Церемония открытия соревнований. Основной поток "
-                  isMobile={isMobile}
-                />
-                <ProgramSchedule
-                  date="20:45"
-                  desc="Награждение. Церемония закрытия соревнований."
-                  isMobile={isMobile}
-                />
-              </Stack>
-            </Stack>
-            {/* <Stack direction={"column"} spacing={"56px"} alignItems={"center"}>
-              <ProgramHeader text="12 марта" isMobile={isMobile} />
-              <Stack
-                direction={"column"}
-                sx={{ px: isMobile ? "0px" : "15px" }}
-                spacing={"8px"}
-              >
-                <ProgramSchedule
-                  date="11:30-14:00"
-                  desc="I поток (юниоры и юниорки до 20 лет)"
-                  isMobile={isMobile}
-                />
-                <ProgramSchedule
-                  date="14:00-15:00"
+                  date="13:10"
                   desc="Разминка II потока"
                   isMobile={isMobile}
                 />
                 <ProgramSchedule
-                  date="15:00-17:30"
-                  desc="II поток (мужчины и женщины)"
+                  date="14:00"
+                  desc="II поток (юниоры и юниорки до 20 лет)"
                   isMobile={isMobile}
                 />
                 <ProgramSchedule
-                  date="17:40-18:00"
-                  desc="Церемония открытия соревнований"
+                  date="16:10"
+                  desc="Разминка III потока"
                   isMobile={isMobile}
                 />
                 <ProgramSchedule
-                  date="18:00-20:00"
-                  desc="Основной поток (сильнейшие спортсмены)"
+                  date="17:00"
+                  desc="III поток (муж., жен.)"
                   isMobile={isMobile}
                 />
                 <ProgramSchedule
-                  date="20:00-20:30"
-                  desc="Награждение. Церемония закрытия соревнований."
+                  date="19:00"
+                  desc="Церемония награждения (все возраста)"
                   isMobile={isMobile}
                 />
               </Stack>
-            </Stack> */}
+            </Stack>
+            <Stack direction={"column"} spacing={"56px"} alignItems={"center"}>
+              <ProgramHeader text="9 МАРТА" isMobile={isMobile} />
+              <Stack
+                direction={"column"}
+                sx={{ px: isMobile ? "0px" : "15px" }}
+                spacing={"8px"}
+              >
+                <ProgramSchedule
+                  date="10:00"
+                  desc="I поток (юноши и девушки до 14 лет)"
+                  isMobile={isMobile}
+                />
+                <ProgramSchedule
+                  date="12:00"
+                  desc="Разминка II потока"
+                  isMobile={isMobile}
+                />
+                <ProgramSchedule
+                  date="12:30"
+                  desc="II поток (юноши и девушки до 14 лет, до 16 лет)"
+                  isMobile={isMobile}
+                />
+                <ProgramSchedule
+                  date="14:30"
+                  desc="Разминка III потока"
+                  isMobile={isMobile}
+                />
+                <ProgramSchedule
+                  date="15:00"
+                  desc="III поток (юноши и девушки до 16 лет)"
+                  isMobile={isMobile}
+                />
+                <ProgramSchedule
+                  date="17:00"
+                  desc="Общее награждение участников"
+                  isMobile={isMobile}
+                />
+                <ProgramSchedule
+                  date="17:20"
+                  desc="Церемония открытия"
+                  isMobile={isMobile}
+                />
+                <ProgramSchedule
+                  date="17:40"
+                  desc="Старт основного потока"
+                  isMobile={isMobile}
+                />
+                <ProgramSchedule
+                  date="19:30"
+                  desc="Награждение. Церемония закрытия соревнований"
+                  isMobile={isMobile}
+                />
+              </Stack>
+            </Stack>
           </Stack>
         </Container>
       </Box>
