@@ -35,7 +35,7 @@ export default function Home() {
         }}
       />
       <Programs isMobile={isMobile} scrollRef={scrollRef} />
-      {/* <Stream isMobile={isMobile} /> */}
+      <Stream isMobile={isMobile} />
       <WinnersCarousel isMobile={isMobile} />
       <GalleryBlock isMobile={isMobile} />
       <Partners isMobile={isMobile} />
