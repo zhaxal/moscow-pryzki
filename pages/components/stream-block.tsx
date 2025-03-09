@@ -53,13 +53,13 @@ const Stream = ({ isMobile }: Props) => {
           }}
         >
           <iframe
-            src="https://vkvideo.ru/video-146325682_456239245"
+            src="https://vkvideo.ru/video_ext.php?oid=-146325682&id=456239245&hd=1&autoplay=1"
             title="VKvideo video player"
-            allowFullScreen
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            frameBorder={"0px"}
+            width="100%"
             height={isMobile ? "694px" : "267px"}
-            width={"100%"}
+            allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+            frameBorder="0"
+            allowFullScreen
           />
         </Container>
       </Box>
