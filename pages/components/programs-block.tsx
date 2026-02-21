@@ -85,7 +85,7 @@ const Programs = ({ isMobile, scrollRef }: Props) => {
     <Box
       ref={scrollRef}
       sx={{
-        minHeight: isMobile ? "1024px" : "1549px",
+        minHeight: isMobile ? "1224px" : "1549px",
         width: "100%",
         position: "relative",
       }}
@@ -131,15 +131,20 @@ const Programs = ({ isMobile, scrollRef }: Props) => {
               spacing={isMobile ? "56px" : "48px"}
               alignItems={"center"}
             >
-              <ProgramHeader text="8 МАРТА" isMobile={isMobile} />
+              <ProgramHeader text="7 МАРТА" isMobile={isMobile} />
               <Stack
                 direction={"column"}
                 sx={{ px: isMobile ? "0px" : "15px" }}
                 spacing={"8px"}
               >
                 <ProgramSchedule
-                  date="10:50"
-                  desc="1 поток (юноши и девушки до 16 лет, до 18 лет)"
+                  date="10:00"
+                  desc="Разминка I потока"
+                  isMobile={isMobile}
+                />
+                <ProgramSchedule
+                  date="10:40"
+                  desc="I поток (юноши и девушки до 16 лет, до 18 лет)"
                   isMobile={isMobile}
                 />
                 <ProgramSchedule
@@ -153,7 +158,7 @@ const Programs = ({ isMobile, scrollRef }: Props) => {
                   isMobile={isMobile}
                 />
                 <ProgramSchedule
-                  date="16:10"
+                  date="16:20"
                   desc="Разминка III потока"
                   isMobile={isMobile}
                 />
@@ -162,15 +167,10 @@ const Programs = ({ isMobile, scrollRef }: Props) => {
                   desc="III поток (муж., жен.)"
                   isMobile={isMobile}
                 />
-                <ProgramSchedule
-                  date="19:00"
-                  desc="Церемония награждения (все возраста)"
-                  isMobile={isMobile}
-                />
               </Stack>
             </Stack>
             <Stack direction={"column"} spacing={"56px"} alignItems={"center"}>
-              <ProgramHeader text="9 МАРТА" isMobile={isMobile} />
+              <ProgramHeader text="8 МАРТА" isMobile={isMobile} />
               <Stack
                 direction={"column"}
                 sx={{ px: isMobile ? "0px" : "15px" }}
@@ -178,46 +178,51 @@ const Programs = ({ isMobile, scrollRef }: Props) => {
               >
                 <ProgramSchedule
                   date="10:00"
+                  desc="Разминка I потока"
+                  isMobile={isMobile}
+                />
+                <ProgramSchedule
+                  date="10:40"
                   desc="I поток (юноши и девушки до 14 лет)"
                   isMobile={isMobile}
                 />
                 <ProgramSchedule
-                  date="12:00"
-                  desc="Разминка II потока"
-                  isMobile={isMobile}
-                />
-                <ProgramSchedule
-                  date="12:30"
-                  desc="II поток (юноши и девушки до 14 лет, до 16 лет)"
-                  isMobile={isMobile}
-                />
-                <ProgramSchedule
-                  date="14:30"
-                  desc="Разминка III потока"
-                  isMobile={isMobile}
-                />
-                <ProgramSchedule
-                  date="15:00"
-                  desc="III поток (юноши и девушки до 16 лет)"
-                  isMobile={isMobile}
-                />
-                <ProgramSchedule
-                  date="17:00"
+                  date="12:40"
                   desc="Общее награждение участников"
                   isMobile={isMobile}
                 />
                 <ProgramSchedule
-                  date="17:20"
+                  date="12:40"
+                  desc="Разминка II потока"
+                  isMobile={isMobile}
+                />
+                <ProgramSchedule
+                  date="13:20"
+                  desc="II поток (юноши и девушки до 14 лет, до 16 лет)"
+                  isMobile={isMobile}
+                />
+                <ProgramSchedule
+                  date="15:30"
+                  desc="Разминка III потока"
+                  isMobile={isMobile}
+                />
+                <ProgramSchedule
+                  date="16:10"
+                  desc="III поток (юноши и девушки до 16 лет)"
+                  isMobile={isMobile}
+                />
+                <ProgramSchedule
+                  date="18:50"
                   desc="Церемония открытия"
                   isMobile={isMobile}
                 />
                 <ProgramSchedule
-                  date="17:40"
+                  date="19:10"
                   desc="Старт основного потока"
                   isMobile={isMobile}
                 />
                 <ProgramSchedule
-                  date="19:30"
+                  date="21:00"
                   desc="Награждение. Церемония закрытия соревнований"
                   isMobile={isMobile}
                 />

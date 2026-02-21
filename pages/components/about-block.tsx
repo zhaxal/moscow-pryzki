@@ -50,7 +50,7 @@ const About = ({ isMobile }: Props) => {
                 textTransform: "uppercase",
               }}
             >
-              ШЕСТОЙ ФЕСТИВАЛЬ
+              СЕДЬМОЙ ФЕСТИВАЛЬ
             </Typography>
             <Typography
               variant="body"
@@ -61,15 +61,9 @@ const About = ({ isMobile }: Props) => {
                 textAlign: "justify",
               }}
             >
-              8—9 марта 2025 г. в манеже МГСУ, в одном из лучших и современных
-              легкоатлетических манежей, состоится пятый юбилейный Всероссийский
-              Фестиваль прыжков с шестом. Впервые в этом году участниками
-              соревнований станут не только спортсмены из различных регионов
-              нашей страны, а также ведущие спортсмены Республики Беларусь —
-              многократная чемпионка и рекордсменка Республики Беларусь Ирина
-              Жук и Матвей Волков — молодой, но уже титулованный спортсмен,
-              показывающий результаты на уровне призовых мест Чемпионатов Европы
-              и Мира.
+              7 — 8 марта 2026 г. в манеже МГСУ, в одном из лучших и современных
+              легкоатлетических манежей, состоится седьмой Всероссийский
+              Фестиваль прыжков с шестом.
             </Typography>
 
             <Stack
@@ -96,18 +90,18 @@ const About = ({ isMobile }: Props) => {
               />
             </Stack>
           </Stack>
-            <Stack
+          <Stack
             direction={"column"}
             spacing={isLaptop ? "19px" : "40px"}
             sx={{ px: isLaptop ? "0px" : "15px" }}
-            >
+          >
             <Typography
               variant="body"
               sx={{
-              fontSize: "25px",
-              lineHeight: "23.93px",
-              fontFamily: "Gotham Pro Medium",
-              textTransform: "uppercase",
+                fontSize: "25px",
+                lineHeight: "23.93px",
+                fontFamily: "Gotham Pro Medium",
+                textTransform: "uppercase",
               }}
             >
               Традиции
@@ -115,10 +109,10 @@ const About = ({ isMobile }: Props) => {
             <Typography
               variant="body"
               sx={{
-              fontSize: "1em",
-              lineHeight: "18.29px",
-              minHeight: isLaptop ? "192px" : "100%",
-              textAlign: "justify",
+                fontSize: "1em",
+                lineHeight: "18.29px",
+                minHeight: isLaptop ? "192px" : "100%",
+                textAlign: "justify",
               }}
             >
               Этот фестиваль — не только праздник спорта, но и праздник русской
@@ -135,13 +129,13 @@ const About = ({ isMobile }: Props) => {
               component={"img"}
               src={"images/gallery/about-right.png"}
               alt={"about-right"}
-              sx={{ 
-              maxHeight: isMobile ? "344px" : "275px",
-              objectFit: "contain",
-              width: "100%"
+              sx={{
+                maxHeight: isMobile ? "344px" : "275px",
+                objectFit: "contain",
+                width: "100%",
               }}
             />
-            </Stack>
+          </Stack>
         </Stack>
       </Container>
     </Box>
