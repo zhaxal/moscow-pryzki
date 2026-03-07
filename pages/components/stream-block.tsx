@@ -52,8 +52,9 @@ const Stream = ({ isMobile }: Props) => {
             mt: isMobile ? "80px" : "74px",
           }}
         >
+          
           <iframe
-            src="https://vkvideo.ru/video_ext.php?oid=-146325682&id=456239245&hd=1&autoplay=1"
+            src="https://vkvideo.ru/video_ext.php?oid=-6783586&id=456246641&hd=3"
             title="VKvideo video player"
             width="100%"
             height={isMobile ? "694px" : "267px"}

@@ -12,7 +12,7 @@ const Partners = ({ isMobile }: Props) => {
       sx={{
         background:
           "linear-gradient(230deg, #229ffb 0%, #54dae6 46.09%, #8c64de 100%)",
-        minHeight: isMobile ? "879px" : "1239px",
+        minHeight: isMobile ? "879px" : "1439px",
         width: "100%",
         position: "relative",
       }}
@@ -75,6 +75,13 @@ const Partners = ({ isMobile }: Props) => {
               <Box
                 component={"img"}
                 src={"images/logos/mossportLogo.png"}
+                maxWidth={"90%"}
+              />
+            </Grid>
+            <Grid item md={4} style={{ textAlign: "center", width: "100%" }}>
+              <Box
+                component={"img"}
+                src={"images/logos/vfla_black.svg"}
                 maxWidth={"90%"}
               />
             </Grid>
